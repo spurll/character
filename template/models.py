@@ -1,4 +1,4 @@
-from tournament import app, db
+from template import app, db
 
 
 class User(db.Model):
