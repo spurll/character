@@ -1,5 +1,5 @@
-from flask import render_template,flash,redirect,session,url_for,request,g
-from flask.ext.login import login_user,logout_user,current_user,login_required
+from flask import render_template, flash, redirect, session, url_for, request
+from flask.ext.login import login_user, logout_user, current_user, login_required
 import ldap3
 
 from template import app, db, lm
@@ -20,7 +20,7 @@ def view_objects():
     """
     Views objects.
     """
-    user = g.user
+    user = current_user
     objects = user.objects
 
     form = TemplateForm()
@@ -39,7 +39,7 @@ def login():
     """
     Logs the user in using LDAP authentication.
     """
-    if g.user is not None and g.user.is_authenticated:
+    if current_user is not None and current_user.is_authenticated:
         return redirect(url_for('index'))
 
     form = LoginForm()
