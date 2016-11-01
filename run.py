@@ -3,7 +3,7 @@
 
 from argparse import ArgumentParser
 
-from template import app
+from character import app
 
 
 if __name__ == '__main__':

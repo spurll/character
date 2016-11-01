@@ -1,4 +1,4 @@
-from template import app, db
+from character import app
 
 
 class User(db.Model):

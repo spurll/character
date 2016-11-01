@@ -1,11 +1,8 @@
 from flask import render_template, flash, redirect, session, url_for, request
-from flask.ext.login import login_user, logout_user, current_user, login_required
-import ldap3
 
-from template import app, db, lm
-from template.forms import LoginForm, TemplateForm
-from template.models import User, Object
-from template.authenticate import authenticate
+from character import app
+from character.forms import LoginForm, TemplateForm
+from character.models import User, Object
 
 
 @app.route('/')
